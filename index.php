@@ -14,9 +14,9 @@
      
     try {
     $connection->pdo->exec('CREATE TABLE IF NOT EXISTS patients (patient_name varchar(255), notes varchar(255))');
-
-echo '<script>alert("' . print_r($connection->pdo->errorInfo()) . '")</script>';
-
+    $tables = $connection->pdo->query(".tables");
+echo '<script>alert("' . print_r($tables) . '")</script>';
+    
     }catch(Exception $e){
         echo '<script>alert("Commit complete!' . $e .  '")</script>';
     }
@@ -56,7 +56,7 @@ echo '<script>alert("' . print_r($connection->pdo->errorInfo()) . '")</script>';
 		</table>
 		<br>
 			<form method="POST">
-				Enter Paient Name ABC:
+				Enter Paient Name:
 				<input type="text" name="patient_name">
 				<br>
 				Enter Notes:
