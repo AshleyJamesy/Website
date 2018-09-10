@@ -56,7 +56,7 @@ echo '<script>alert("' . print_r($connection->pdo->errorInfo()) . '")</script>';
 		</table>
 		<br>
 			<form method="POST">
-				Enter Paient Name:
+				Enter Paient Name ABC:
 				<input type="text" name="patient_name">
 				<br>
 				Enter Notes:
