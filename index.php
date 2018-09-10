@@ -14,7 +14,7 @@
      
     try {
     $connection->pdo->exec('CREATE TABLE IF NOT EXISTS patients (patient_name varchar(255), notes varchar(255))');
-    $tables = $connection->pdo->query(".tables");
+    $tables = $connection->pdo->exec(".tables");
 echo '<script>alert("' . print_r($tables) . '")</script>';
     
     }catch(Exception $e){
