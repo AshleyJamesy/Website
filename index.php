@@ -14,7 +14,7 @@
      
     try {
     $connection->pdo->exec('CREATE TABLE IF NOT EXISTS patients (patient_name varchar(255), notes varchar(255))');
-    $tables = $connection->pdo->exec(".tables");
+    $tables = $connection->pdo->query("SELECT * FROM sqlite_master WHERE type=\'table\'");
 echo '<script>alert("' . print_r($tables) . '")</script>';
     
     }catch(Exception $e){
